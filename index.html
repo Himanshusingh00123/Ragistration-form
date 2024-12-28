@@ -3,62 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ragistration Form</title>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-image: url('https://image.slidesdocs.com/responsive-images/background/abstract-wallpaper-technology-business-white-color-powerpoint-background_e4ef4da124__960_540.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+      color: rgb(0, 145, 223);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+    button {
+      background-color: rgb(0, 145, 223);
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: rgb(0, 120, 200);
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    legend {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .inline {
+      display: flex;
+      gap: 10px;
+    }
+    .inline label {
+      font-weight: normal;
+    }
+  </style>
 </head>
-<style>
-  body{
-    background-image: url('https://image.slidesdocs.com/responsive-images/background/abstract-wallpaper-technology-business-white-color-powerpoint-background_e4ef4da124__960_540.jpg');
-  }
-  form{
-    text-align:center
-  }
-  h1{
-    text-decoration:underline;
-  }
-</style>
-<body><div>
-  <form>
-  <h1><header>Ragistration Form</header></h1><hr>
-  <!-- name section -->
-  <lable for="Firstname"><b>First name</b></lable>
-  <input type="text" id="firstname" name="first name" placeholder="Enter your first name"required><br><br>
-  <lable for="lastname"><b>Last name</b></lable>
-  <input type="text" id="lastname" name="last name" placeholder="Enter your last name"required><br><br>
-  <!-- email section -->
-  <lable for="email"><b>Email</b></lable>
-  <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
-  <!-- password section -->
-  <lable for="password"><b>Password</b></lable>
-  <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
-   <!-- contact section -->
-   <lable for="contact"><b>Contact</b></lable>
-   <input type="tel" id="contact" name="contact" placeholder="Enter your mobile number"required><br><br>
-  <!-- address section -->
-  <lable for="address"><b>Address</b></lable>
-  <input type="text" id="address" name="address" placeholder="Enter your address" required><br><br>
-  <!-- gender section -->
-<lable for="gender"><b>Select your gender-</b></lable><br>
-<input type="radio" id="gender" name="gender" value="Male">Male
-<input type="radio" id=gender name="gender" value="Female">Female<br><br>
-<!-- country section -->
-<lable for="country"><b>Select your country-</b></lable><br>
-<select name="country">
-  <option value="india">India</option>
-  <option value="usa">USA</option>
-  <option value="uk">UK</option>
-  <option value="qatar">Qatar</option>
-</select><br><br>
-<!-- hobbies section -->
-<lable for="hobbies"><b>Hobbies-</b></lable><br>
-<input type="checkbox" id="hobbies" name="hobbies" value="reading">Reading
-<input type="checkbox" id="hobbies" name="hobbies" value="palying cricket">Playing cricket
-<input type="checkbox" id="hobbies" name="hobbies" value="teaching">Teaching
-<input type="checkbox" id="hobbies" name="hobbies" value="singing">Singing
-<input type="checkbox" id="hobbies" name="hobbies" value="dancing">Dancing<br><br>
-<button type="submit" style="background-color:rgb(0, 145, 223)">Submit</button>
+<body>
+  <div class="container">
+    <form>
+      <h1>Registration Form</h1>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
 
- 
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
 
-</form></div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="contact">Contact</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your mobile number" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional Information</legend>
+        <label for="gender">Gender</label>
+        <div class="inline">
+          <label><input type="radio" id="male" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" id="female" name="gender" value="Female" required> Female</label>
+        </div>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="" disabled selected>Select your country</option>
+          <option value="india">India</option>
+          <option value="usa">USA</option>
+          <option value="uk">UK</option>
+          <option value="qatar">Qatar</option>
+        </select>
+
+        <label for="hobbies">Hobbies</label>
+        <div class="inline">
+          <label><input type="checkbox" id="hobby-reading" name="hobbies" value="reading"> Reading</label>
+          <label><input type="checkbox" id="hobby-cricket" name="hobbies" value="playing cricket"> Playing Cricket</label>
+          <label><input type="checkbox" id="hobby-teaching" name="hobbies" value="teaching"> Teaching</label>
+          <label><input type="checkbox" id="hobby-singing" name="hobbies" value="singing"> Singing</label>
+          <label><input type="checkbox" id="hobby-dancing" name="hobbies" value="dancing"> Dancing</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
